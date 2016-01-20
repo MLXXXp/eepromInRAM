@@ -29,8 +29,7 @@ boolean ArduboyEeprom::write(unsigned int address, uint8_t data) {
 }
 
 boolean ArduboyEeprom::read(unsigned int address, uint8_t *buffer, size_t size) {
-  unsigned int end = address + size;
-  if (end > eeLength) {
+  if ((address + size) > eeLength) {
     return false;
   }
 
@@ -39,8 +38,7 @@ boolean ArduboyEeprom::read(unsigned int address, uint8_t *buffer, size_t size) 
 }
 
 boolean ArduboyEeprom::write(unsigned int address, uint8_t *buffer, size_t size) {
-  unsigned int end = address + size;
-  if (end > eeLength) {
+  if ((address + size) > eeLength) {
     return false;
   }
 
